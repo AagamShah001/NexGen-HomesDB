@@ -44,6 +44,9 @@ app.use("/wishlist",WishListRoutes)
 const AdminRoutes = require("./src/routes/AdminRoutes")
 app.use(AdminRoutes)
 
+const ComplaintRoutes = require("./src/routes/ComplaintRoutes")
+app.use(ComplaintRoutes)
+
 const NotifyRoutes = require("./src/routes/NotificationRoutes")
 app.use(NotifyRoutes)
 

@@ -19,11 +19,11 @@ const getAllProperty = async (req, res) => {
   filter.basePrice;
 
   try {
-    const Property = await PropertyModel.find(filter).select('name basePrice stateId cityId').populate("stateId cityId");
+    const Property = await PropertyModel.find(filter).select('name basePrice stateId cityId areaId createdAt').populate("stateId cityId areaId");
     if (Property.length === 0) {
       res.status(404).json({ message: "No Property found" });
     } else {
-      res.status(200).json({
+      res.status(200).json({ 
         message: "Property found successfully",
         data: Property,
       });
